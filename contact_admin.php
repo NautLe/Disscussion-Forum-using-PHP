@@ -23,15 +23,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             // Server settings
             $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com'; // Use your SMTP server
+            $mail->Host = 'smtp.gmail.com'; 
             $mail->SMTPAuth = true;
-            $mail->Username = 'dauding159@gmail.com'; // Your email address
-            $mail->Password = 'subh fjez mtaf dhev'; // Your email password or App Password
+            $mail->Username = getenv('MAIL_USER');
+            $mail->Password = getenv('MAIL_PASS');
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
             // Recipients
-            $mail->setFrom('your_email@gmail.com', 'Contact Form');
+            $mail->setFrom(getenv('MAIL_USER'), 'Contact Form');
             $mail->addAddress('dauding159@gmail.com'); // Admin's email
 
             // Content

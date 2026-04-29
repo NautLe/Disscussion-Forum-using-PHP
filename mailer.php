@@ -1,23 +1,20 @@
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
 
 require __DIR__ . "/vendor/autoload.php";
 
 $mail = new PHPMailer(true);
 
-//$mail->SMTPDebug = SMTP::DEBUG_SERVER;
-
-$mail-> isSMTP();
-$mail->SMTPAuth = true; 
+$mail->isSMTP();
+$mail->SMTPAuth = true;
 
 $mail->Host = "smtp.gmail.com";
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port = 587;
-$mail->Username = "askmeiovn@gmail.com";
-$mail->Password = "cvcb vbbs cyfx vkfn";
+
+$mail->Username = getenv('MAIL_USER');
+$mail->Password = getenv('MAIL_PASS');
 
 $mail->isHTML(true);
 
