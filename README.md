@@ -75,7 +75,7 @@ project/
 Clone repository:
 
 ```bash
-git clone https://github.com/yourusername/Disscussion-Forum-using-PHP.git
+git clone https://github.com/NautLe/Disscussion-Forum-using-PHP.git
 ```
 
 Move project into XAMPP htdocs:
